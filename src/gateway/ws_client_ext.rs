@@ -110,7 +110,7 @@ impl WebSocketGatewayClientExt for WsStream {
                 "large_threshold": constants::LARGE_THRESHOLD,
                 "shard": shard_info,
                 "token": token,
-                "intents": intents,
+                //"intents": intents,
                 "v": constants::GATEWAY_VERSION,
                 "properties": {
                     "$browser": "serenity",

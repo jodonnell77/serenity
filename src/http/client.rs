@@ -105,10 +105,11 @@ impl<'a> HttpBuilder<'a> {
     /// Sets a token for the bot. If the token is not prefixed "Bot ", this
     /// method will automatically do so.
     pub fn token(mut self, token: impl AsRef<str>) -> Self {
-        let token = token.as_ref().trim();
-
-        let token =
-            if token.starts_with("Bot ") { token.to_string() } else { format!("Bot {}", token) };
+        let token = token.as_ref().trim().to_string();
+        
+        // Taking this out to allow for self bots
+        //let token =
+        //    if token.starts_with("Bot ") { token.to_string() } else { format!("Bot {}", token) };
 
         self.token = Some(token);
 
@@ -270,12 +271,12 @@ impl Http {
         let builder = configure_client_backend(Client::builder());
         let built = builder.build().expect("Cannot build reqwest::Client");
 
-        let trimmed = token.trim();
-        let token = if trimmed.starts_with("Bot ") || trimmed.starts_with("Bearer ") {
-            token.to_string()
-        } else {
-            format!("Bot {}", token)
-        };
+        let trimmed = token.trim().to_string();
+        //let token = if trimmed.starts_with("Bot ") || trimmed.starts_with("Bearer ") {
+        //    token.to_string()
+        //} else {
+        //    format!("Bot {}", token)
+        //};
 
         Self::new(Arc::new(built), &token)
     }
