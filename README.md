@@ -1,5 +1,5 @@
 [![ci-badge][]][ci] [![docs-badge][]][docs] [![guild-badge][]][guild] [![crates.io version]][crates.io link] [![rust 1.51.0+ badge]][rust 1.51.0+ link]
-
+# # (THIS IS A FORK OF SERENITY THAT ALLOWS FOR SELFBOTS, THIS IS FOR A PERSONAL PROJECT)
 # serenity
 
 ![serenity logo][logo]
